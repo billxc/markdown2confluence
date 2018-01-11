@@ -98,15 +98,14 @@ _.extend(Renderer.prototype, rawRenderer.prototype, {
 		var param = {
 			language: lang,
 			borderStyle: 'solid',
-			theme: 'RDark', // dark is good
 			linenumbers: true,
 			collapse: false
 		}
 		var lineCount = _.split(code, '\n').length
-		if (lineCount > MAX_CODE_LINE) {
+		//if (lineCount > MAX_CODE_LINE) {
 			// code is too long
-			param.collapse = true
-		}
+		//	param.collapse = true
+		//}
 		param = qs.stringify(param, '|', '=')
 		return '{code:' + param + '}\n' + code + '\n{code}\n\n'
 	}
