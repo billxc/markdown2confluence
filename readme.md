@@ -32,7 +32,7 @@ markdown2confluence markdown.md
 
 or
 
-Try in browser <http://chunpu.github.io/markdown2confluence/browser/>
+Try in browser <http://billxc.github.io/markdown2confluence/browser/>
 
 Document
 ---
