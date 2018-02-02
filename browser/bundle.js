@@ -156,18 +156,13 @@
 		, code: function(code, lang) {
 			// {code:language=java|borderStyle=solid|theme=RDark|linenumbers=true|collapse=true}
 			lang = langMap[lang] || ''
+			if(lang === 'js') lang= 'javascript';
 			var param = {
 				language: lang,
-				borderStyle: 'solid',
-				theme: 'RDark', // dark is good
-				linenumbers: true,
+				linenumbers: false,
 				collapse: false
 			}
 			var lineCount = _.split(code, '\n').length
-			if (lineCount > MAX_CODE_LINE) {
-				// code is too long
-				param.collapse = true
-			}
 			param = qs.stringify(param, '|', '=')
 			return '{code:' + param + '}\n' + code + '\n{code}\n\n'
 		}
