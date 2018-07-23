@@ -57,11 +57,11 @@ _.extend(Renderer.prototype, rawRenderer.prototype, {
 		return '----'
 	}
 	, link: function(href, title, text) {
-		var arr = [href.replace(/\{/g,'&#123;').replace(/\{/g,'&#125;')]
+		var arr = [href.replace(/\{/g,'&#123;').replace(/\}/g,'&#125;')]
 		if (text) {
-			arr.unshift(text.replace(/\{/g,'&#123;').replace(/\{/g,'&#125;'))
+			arr.unshift(text.replace(/\{/g,'&#123;').replace(/\}/g,'&#125;'))
 		}
-		return '[' + arr.join('|').replace('{','%7B').replace('}','%7D') + ']'
+		return '[' + arr.join('|') + ']'
 	}
 	, list: function(body, ordered) {
 		var arr = _.filter(_.trim(body).split('\n'), function(line) {
