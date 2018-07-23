@@ -124,6 +124,7 @@
 			herf = href.replace(/\{/g,'&#123;').replace(/\{/g,'&#125;')
 			var arr = [href]
 			if (text) {
+				text = text.replace(/\{/g,'&#123;').replace(/\{/g,'&#125;')
 				arr.unshift(text)
 			}
 			return '[' + arr.join('|') + ']'
