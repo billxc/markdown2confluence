@@ -121,11 +121,12 @@
 			return '----'
 		}
 		, link: function(href, title, text) {
+			herf = href.replace(/\{/g,'%7B').replace(/\{/g,'%7D')
 			var arr = [href]
 			if (text) {
 				arr.unshift(text)
 			}
-			return '[' + arr.join('|').replace('{','%7B').replace('}','%7D') + ']'
+			return '[' + arr.join('|') + ']'
 		}
 		, list: function(body, ordered) {
 			var arr = _.filter(_.trim(body).split('\n'), function(line) {
