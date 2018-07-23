@@ -57,9 +57,9 @@ _.extend(Renderer.prototype, rawRenderer.prototype, {
 		return '----'
 	}
 	, link: function(href, title, text) {
-		var arr = [href]
+		var arr = [href.replace(/\{/g,'&#123;').replace(/\{/g,'&#125;')]
 		if (text) {
-			arr.unshift(text)
+			arr.unshift(text.replace(/\{/g,'&#123;').replace(/\{/g,'&#125;'))
 		}
 		return '[' + arr.join('|').replace('{','%7B').replace('}','%7D') + ']'
 	}
