@@ -61,7 +61,7 @@ _.extend(Renderer.prototype, rawRenderer.prototype, {
 		if (text) {
 			arr.unshift(text)
 		}
-		return '[' + arr.join('|') + ']'
+		return '[' + arr.join('|').replace('{','%7B').replace('}','%7D') + ']'
 	}
 	, list: function(body, ordered) {
 		var arr = _.filter(_.trim(body).split('\n'), function(line) {
