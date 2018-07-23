@@ -121,7 +121,7 @@
 			return '----'
 		}
 		, link: function(href, title, text) {
-			herf = href.replace(/\{/g,'&#123;').replace(/\}/g,'&#125;')
+			href = href.replace(/\{/g,'&#123;').replace(/\}/g,'&#125;')
 			var arr = [href]
 			if (text) {
 				text = text.replace(/\{/g,'&#123;').replace(/\}/g,'&#125;')
